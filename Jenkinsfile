@@ -6,6 +6,7 @@ pipeline{
         stage('Lintchecks'){
             steps{
                 echo "Starting style checks"
+                sh "npm i jslint"
                 sh "/home/centos/node_modules/jslint/bin/jslint.js server.js"
                 echo "***** Style checks are completed *****"
             }

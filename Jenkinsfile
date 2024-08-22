@@ -14,6 +14,7 @@ pipeline{
         stage('Static Code Analysis') {
             steps{
                 echo "Starting code analysis"
+                echo "We will updte after code analysis"
             }
         }
     }

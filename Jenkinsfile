@@ -1,19 +1,18 @@
-pipeline { 
-    agent {
-        labels 'ws'
+pipeline{
+    agent{
+        label "workstation"
     }
-    stages {
-        stage('Lint Checks') {
-            steps {
-                sh "echo Installing Lint Checker"
-                sh "npm i jslint"
-                sh "node_modules/jslint/bin/jslint.js server.js"
+    stages{
+        stage('Lintchecks'){
+            steps{
+                echo "Starting style checks"
+                sh "/home/centos/node_modules/jslint/bin/jslint.js server.js"
+                echo "***** Style checks are completed *****"
             }
+            
         }
         stage('Static Code Analysis') {
-            steps {
-                sh "echo Static Checks ...."
+            steps{
+                echo "Starting code analysis"
             }
         }
-    }
-}

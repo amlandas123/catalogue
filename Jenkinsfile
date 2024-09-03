@@ -3,20 +3,17 @@ pipeline{
         label "workstation"
     }
     stages{
-        stage('Lintchecks'){
+        stage("Lintchecks"){
             steps{
-                echo "Starting style checks"
-                sh "npm i jslint"
+                sh "echo ***Starting the style checks***"
                 sh "/home/centos/node_modules/jslint/bin/jslint.js server.js"
-                echo "***** Style checks are completed *****"
+                sh "echo ***Style checks are completed***"
             }
-            
+
+        
         }
-        stage('Static Code Analysis') {
-            steps{
-                echo "Starting code analysis"
-                echo "We will updte after code analysis"
-            }
-        }
+        stage("Static Code Analysis"){
+                sh "echo *** Starting code analysis ***"  
+        }            
     }
-}   
+}

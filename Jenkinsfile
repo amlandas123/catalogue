@@ -7,7 +7,7 @@ pipeline{
         stage("Lintchecks"){
             steps{
                 script {
-                    sample.info()
+                    sample.info("catalogue")
                 }
                 sh "whoami"
                 sh "echo *** Lint check starting ***"

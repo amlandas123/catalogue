@@ -1,3 +1,4 @@
+@library("jenkins-shared-library") _
 pipeline{
     agent{
         label "node"
@@ -5,6 +6,9 @@ pipeline{
     stages{
         stage("Lintchecks"){
             steps{
+                script {
+                    sample.info()
+                }
                 sh "whoami"
                 sh "echo *** Lint check starting ***"
                 sh "npm i jslint"

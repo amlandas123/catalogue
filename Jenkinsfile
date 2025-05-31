@@ -8,13 +8,13 @@ pipeline{
                 sh "echo ***********Starting Style Checks****************"
                 sh "/home/ec2-user/node_modules/jslint/bin/jslint.js server.js"
             }
+        }    
         stage('Static Code Analysis'){
             steps{
                 sh "echo ******** Starting Static Code Analysis *******"
                 sh "echo welcome all to sonarcube"
             }
         }
-
-        }
     }
+    
 }

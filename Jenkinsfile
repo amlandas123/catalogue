@@ -11,6 +11,7 @@ pipeline{
         stage('Static Code Analysis'){
             steps{
                 sh "echo ******** Starting Static Code Analysis *******"
+                sh "echo welcome all to sonarcube"
             }
         }
 

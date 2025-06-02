@@ -9,7 +9,9 @@ pipeline{
                 script{
                     hello.info1
                 }
+                
                 sh "echo ***********Starting Style Checks****************"
+                sh "npm install jslint"
                 sh "/home/ec2-user/node_modules/jslint/bin/jslint.js server.js || true"
             }
         }    
